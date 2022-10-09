@@ -1,0 +1,7 @@
+.img{
+    width: 450px;
+    }
+
+.bg-img{
+    background-image: url(../../assets/imgs/bg.png);
+}

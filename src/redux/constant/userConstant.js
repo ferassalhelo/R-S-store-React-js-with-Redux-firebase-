@@ -1,0 +1,5 @@
+export const START_PROCCESS_USER = "START_PROCCESS_USER";
+export const END_PROCCESS_USER = "END_PROCCESS_USER";
+export const GET_DATA_FAIL = "GET_DATA_FAIL";
+export const SET_USER_DATA = "SET_USER_DATA";
+export const SIGN_OUT_USER = "SIGN _OUT_USER";
