@@ -12,7 +12,6 @@ import { getAllProducts } from "./redux/actions/productsActions";
 import { getAllReviews } from "./redux/actions/reviewsActions";
 import { getAllOrders } from "./redux/actions/orderAction";
 
-
 function App() {
   let sel = useSelector((state) => state);
   let dispatch = useDispatch();
@@ -25,7 +24,7 @@ function App() {
     if (userData) {
       dispatch({ type: SET_USER_DATA, payload: JSON.parse(userData) });
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>

@@ -1,10 +1,7 @@
-import React from "react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination } from "swiper";
-// Import Swiper styles
-import "swiper/swiper.min.css";
-import "swiper/modules/navigation/navigation.min.css";
-import "swiper/modules/pagination/pagination.min.css";
 import Review from "../Review";
 
 const ReviewsSlider = ({ data, delay }) => {
