@@ -12,7 +12,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "6",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-star-rate": "^0.2.0",
     "react-toastify": "9.0.0",
     "redux": "^4.2.0",
@@ -22,7 +22,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
