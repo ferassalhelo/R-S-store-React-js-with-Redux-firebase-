@@ -3,16 +3,22 @@
 import {
   addDoc,
   collection,
-  deleteDoc,
   doc,
   getDocs,
+  updateDoc,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "../../firebase/firebaseConfig";
-import { DELETE_ORDER, GET_ALL_ORDERS } from "../constant/ordersConstant";
+import {
+  DONE_ORDER,
+  END_PROCCESS_ORDER,
+  GET_ALL_ORDERS,
+  START_PROCCESS_ORDER,
+} from "../constant/ordersConstant";
 
 export const getAllOrders = () => {
   return async (dispatch) => {
+    dispatch({ type: START_PROCCESS_ORDER });
     try {
       const arr = [];
       const querySnapshot = await getDocs(collection(db, "orders"));
@@ -24,8 +30,10 @@ export const getAllOrders = () => {
         type: GET_ALL_ORDERS,
         payload: arr,
       });
+      dispatch({ type: END_PROCCESS_ORDER });
     } catch (error) {
       toast.error(error.message);
+      dispatch({ type: END_PROCCESS_ORDER });
     }
   };
 };
@@ -40,18 +48,23 @@ export const addOrder = async (data) => {
   }
 };
 
-export const deletOrder = (id) => {
-  console.log(id);
+export const doneOrder = (id, item) => {
   return async (dispatch) => {
+    dispatch({ type: START_PROCCESS_ORDER });
     try {
-      await deleteDoc(doc(db, "orders", `${id}`));
+      await updateDoc(doc(db, "orders", id), {
+        ...item,
+        done: true,
+      });
       dispatch({
-        type: DELETE_ORDER,
+        type: DONE_ORDER,
         payload: id,
       });
-      toast.success("order has been deleted");
+      toast.success("order has been done");
+      dispatch({ type: END_PROCCESS_ORDER });
     } catch (error) {
       toast.error(error.message);
+      dispatch({ type: END_PROCCESS_ORDER });
     }
   };
 };

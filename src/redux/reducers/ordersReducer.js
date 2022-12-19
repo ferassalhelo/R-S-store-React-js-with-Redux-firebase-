@@ -1,17 +1,23 @@
-import { DELETE_ORDER, GET_ALL_ORDERS } from "../constant/ordersConstant";
+import { DONE_ORDER, END_PROCCESS_ORDER, GET_ALL_ORDERS, START_PROCCESS_ORDER } from "../constant/ordersConstant";
 
-export default function ordersReducer(state = { orders: [] }, action) {
+export default function ordersReducer(
+  state = { orders: [], orderProccess: false },
+  action
+) {
   switch (action.type) {
+    case START_PROCCESS_ORDER:
+      return { ...state, orderProccess: true };
+    case END_PROCCESS_ORDER:
+      return { ...state, orderProccess: false };
     case GET_ALL_ORDERS:
       return { ...state, orders: [...action.payload] };
-    case DELETE_ORDER:
-      let orders= [...state.orders];
+    case DONE_ORDER:
+      let orders = [...state.orders];
       const id = action.payload;
-      let indx = 0;
-      orders.find((element, index) =>
-        element.id === id ? (indx = index) : null
+      orders.find((element) =>
+        element.id === id ? (element.done = true) : null
       );
-      orders.splice(indx, 1);
+
       return { ...state, orders: orders };
 
     default:

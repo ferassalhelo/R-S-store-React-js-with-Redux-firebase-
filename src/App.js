@@ -12,6 +12,7 @@ import { getAllProducts } from "./redux/actions/productsActions";
 import { getAllReviews } from "./redux/actions/reviewsActions";
 import { getAllOrders } from "./redux/actions/orderAction";
 
+
 function App() {
   let sel = useSelector((state) => state);
   let dispatch = useDispatch();

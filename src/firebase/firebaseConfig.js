@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAf4sye2DDCSh623z-B4moPlkm8iYJGSe4",
-  authDomain: "rs-store-93304.firebaseapp.com",
-  projectId: "rs-store-93304",
-  storageBucket: "rs-store-93304.appspot.com",
-  messagingSenderId: "692586824576",
-  appId: "1:692586824576:web:6456cb37702919443ef765",
+  apiKey: "AIzaSyBvHBACBuqlJ-WqQD_1mMq_xn6aAW8HTu0",
+  authDomain: "graduation-project-4e9c9.firebaseapp.com",
+  projectId: "graduation-project-4e9c9",
+  storageBucket: "graduation-project-4e9c9.appspot.com",
+  messagingSenderId: "420419439540",
+  appId: "1:420419439540:web:477afd92c4a488dca580e1",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

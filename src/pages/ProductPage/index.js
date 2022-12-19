@@ -25,6 +25,7 @@ function ProductPage() {
 
   let addItem = (data) => {
     if (user.name) {
+      console.log(data, "datt");
       dispatch(addItemToCart(data));
       return dispatch(productInCart(item.id));
     } else {

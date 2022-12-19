@@ -1,19 +1,19 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { addItemToCart} from "../../redux/actions/cartActions";
+import { addItemToCart } from "../../redux/actions/cartActions";
 import { productInCart } from "../../redux/actions/productsActions";
 
 function Card({ data }) {
   const user = useSelector((reducers) => reducers.user.userData);
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   let addToCart = () => {
     if (user.name) {
       dispatch(addItemToCart({ ...data, count: 1 }));
       return dispatch(productInCart(data.id));
     } else {
-      navigate('/signin')
+      navigate("/signin");
     }
   };
   return (

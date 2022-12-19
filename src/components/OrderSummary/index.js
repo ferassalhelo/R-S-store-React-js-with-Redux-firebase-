@@ -75,7 +75,7 @@ function OrderSummary({ subTotal, orderItems, userData }) {
               <button
                 type="submit"
                 onClick={PaiementWhenReceiving}
-                className="btn bg-main w-50 rounded-3 fw-bold fs-5 text-white mt-4 "
+                className="btn bg-main w-50 rounded-3 fw-bold fs-5 text-white mt-4"
               >
                 <i className="fa-sharp fa-solid fa-credit-card pe-1"></i> buy
               </button>

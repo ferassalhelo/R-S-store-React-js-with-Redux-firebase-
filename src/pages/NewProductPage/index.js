@@ -72,14 +72,6 @@ const NewProductPage = () => {
               type="number"
             />{" "}
             <ErrorMessage name="price" />
-            {/* <Field
-              className="d-block p-2 w-100 border-0 border-bottom border-dark table-bordered my-4 outline-none"
-              id="suppliere"
-              name="supplier"
-              placeholder="Supplier"
-              type="text"
-            />{" "} */}
-            <ErrorMessage name="supplier" />
             <Field
               className="d-block p-2 w-100 border-0 border-bottom border-dark table-bordered my-4 outline-none"
               id="description"
